@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM linuxserver/code-server:amd64-latest
 
-RUN mkdir -p /usr/src/theos
+RUN mkdir -p /opt/theos
 
 RUN apt-get update && apt-get install -y \
     curl \
@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
  && rm -rf /var/lib/apt/lists/*
 
-ENV THEOS /usr/src/theos
+ENV THEOS /opt/theos
 RUN git clone --recursive https://github.com/theos/theos.git $THEOS
 
 RUN curl https://kabiroberai.com/toolchain/download.php?toolchain=ios-linux -Lo toolchain.tar.gz
