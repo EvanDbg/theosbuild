@@ -16,7 +16,7 @@ RUN apt-get update && apt-get upgrade && apt-get install -y \
     wget \
     libtinfo5 \
     software-properties-common \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* \
  && update-alternatives --set fakeroot /usr/bin/fakeroot-tcp
 
 ENV THEOS /opt/theos
